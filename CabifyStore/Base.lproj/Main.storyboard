@@ -11,13 +11,13 @@
         <!--Store View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StoreViewController" customModule="CabifyStore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreViewController" id="BYZ-38-t0r" customClass="StoreViewController" customModule="CabifyStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPP-Te-ims">
-                                <rect key="frame" x="60" y="752" width="294" height="70"/>
+                                <rect key="frame" x="50" y="752" width="314" height="70"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="ceb-Il-U9N"/>
@@ -25,19 +25,63 @@
                                 <color key="tintColor" red="0.71821456559999997" green="0.16176397570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVR-9b-6gq">
+                                <rect key="frame" x="52" y="108" width="100" height="25"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2gK-mP-mP9"/>
+                                    <constraint firstAttribute="height" constant="25" id="Bl8-9a-Lqd"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.78614836929999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-Fk-atT">
+                                <rect key="frame" x="262" y="108" width="100" height="25"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="BTX-7N-TIC"/>
+                                    <constraint firstAttribute="width" constant="100" id="a2R-oR-m2o"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.78614836929999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-bt-82D">
+                                <rect key="frame" x="167" y="108" width="80" height="25"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="TBM-Ik-Tti"/>
+                                    <constraint firstAttribute="width" constant="80" id="Xh3-Wf-45O"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.78614836929999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.78614836929999998" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EPP-Te-ims" secondAttribute="trailing" constant="60" id="dLn-OM-vJj"/>
+                            <constraint firstItem="VmP-bt-82D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1GU-V7-8by"/>
+                            <constraint firstItem="VmP-bt-82D" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="DTb-4X-QaY"/>
+                            <constraint firstItem="hkl-Fk-atT" firstAttribute="leading" secondItem="VmP-bt-82D" secondAttribute="trailing" constant="15" id="Hsn-Lj-Pp2"/>
+                            <constraint firstItem="VmP-bt-82D" firstAttribute="leading" secondItem="eVR-9b-6gq" secondAttribute="trailing" constant="15" id="VYY-3v-8KH"/>
+                            <constraint firstItem="VmP-bt-82D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ya4-0E-deg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EPP-Te-ims" secondAttribute="trailing" constant="50" id="dLn-OM-vJj"/>
+                            <constraint firstItem="hkl-Fk-atT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="qS7-Xw-wHq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EPP-Te-ims" secondAttribute="bottom" constant="40" id="v5O-NM-v23"/>
-                            <constraint firstItem="EPP-Te-ims" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="vlc-F8-Hrg"/>
+                            <constraint firstItem="eVR-9b-6gq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="vOH-PR-CIq"/>
+                            <constraint firstItem="EPP-Te-ims" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="vlc-F8-Hrg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Dx7-WP-4Uw">
                         <nil key="title"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="btn1" destination="eVR-9b-6gq" id="1of-oA-KAg"/>
+                        <outlet property="btn2" destination="VmP-bt-82D" id="yP4-Sc-eXg"/>
+                        <outlet property="btn3" destination="hkl-Fk-atT" id="224-bA-U2f"/>
                         <outlet property="btnAdd" destination="EPP-Te-ims" id="rGL-60-UZ3"/>
                         <segue destination="cJN-yM-Mdy" kind="show" id="nrk-mX-qyb"/>
                     </connections>
@@ -55,7 +99,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unh-DA-cpd">
-                                <rect key="frame" x="60" y="752" width="294" height="70"/>
+                                <rect key="frame" x="50" y="752" width="314" height="70"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="WNY-Xq-vYK"/>
@@ -70,12 +114,15 @@
                         <viewLayoutGuide key="safeArea" id="ZFw-rF-Hoi"/>
                         <color key="backgroundColor" red="0.71821456559999997" green="0.16176397570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ZFw-rF-Hoi" firstAttribute="trailing" secondItem="unh-DA-cpd" secondAttribute="trailing" constant="60" id="9NB-Gq-cXy"/>
-                            <constraint firstItem="unh-DA-cpd" firstAttribute="leading" secondItem="ZFw-rF-Hoi" secondAttribute="leading" constant="60" id="ATi-mn-nss"/>
+                            <constraint firstItem="ZFw-rF-Hoi" firstAttribute="trailing" secondItem="unh-DA-cpd" secondAttribute="trailing" constant="50" id="9NB-Gq-cXy"/>
+                            <constraint firstItem="unh-DA-cpd" firstAttribute="leading" secondItem="ZFw-rF-Hoi" secondAttribute="leading" constant="50" id="ATi-mn-nss"/>
                             <constraint firstItem="ZFw-rF-Hoi" firstAttribute="bottom" secondItem="unh-DA-cpd" secondAttribute="bottom" constant="40" id="BnS-IA-6vg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="loJ-wk-cNU"/>
+                    <connections>
+                        <outlet property="btnPay" destination="unh-DA-cpd" id="jE9-Uw-D7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3D-o1-o84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
