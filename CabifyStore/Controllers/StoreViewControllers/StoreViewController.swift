@@ -8,14 +8,23 @@
 import UIKit
 
 class StoreViewController: UIViewController {
+   
+    @IBOutlet weak var btnAdd: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+  
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         addNavBarImage()
         setupRightNavImage()
         setupNavigationBar()
+        setupButton()
         
     }
+    
+
     
     func addNavBarImage() {
         let image = UIImage(named: "Logo")
@@ -51,6 +60,11 @@ class StoreViewController: UIViewController {
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
+    }
+    
+  func  setupButton() {
+    btnAdd.layer.cornerRadius = 20
+    
     }
     
     @objc func addTapped() {

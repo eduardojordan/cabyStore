@@ -38,6 +38,7 @@
                         <nil key="title"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnAdd" destination="EPP-Te-ims" id="rGL-60-UZ3"/>
                         <segue destination="cJN-yM-Mdy" kind="show" id="nrk-mX-qyb"/>
                     </connections>
                 </viewController>
