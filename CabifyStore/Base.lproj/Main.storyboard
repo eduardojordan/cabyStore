@@ -34,7 +34,9 @@
                             <constraint firstItem="EPP-Te-ims" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="vlc-F8-Hrg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R65-o3-dnK"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Dx7-WP-4Uw">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="cJN-yM-Mdy" kind="show" id="nrk-mX-qyb"/>
                     </connections>
