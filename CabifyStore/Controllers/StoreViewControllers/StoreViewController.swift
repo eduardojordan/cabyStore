@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import PageMenu
 
 class StoreViewController: UIViewController {
     
@@ -17,24 +16,34 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblPromo: UILabel!
     
-    
     var arrayImages = [UIImage]()
     var productName = String()
     var productPrice = [String]()
-    
+    var products = [Products]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        getProductInfo()
         addNavBarImage()
         setupRightNavImage()
         setupNavigationBar()
         setupButtons()
-        addTappedTSHIRT()
-        
+
+    }
+    
+    func getProductInfo() {
+        Request.shared.getRequest { [self] (result) in
+            products.append(result)
+            print(products)
+            DispatchQueue.main.async { [self] in
+              addTappedTSHIRT()
+            }
+        }
     }
     
     func addNavBarImage() {
@@ -90,10 +99,6 @@ class StoreViewController: UIViewController {
         btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
     
-    func setupCollection() {
-        
-    }
-    
     @objc func addTapped() {
         print("PRESS")
         //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -110,31 +115,43 @@ class StoreViewController: UIViewController {
     }
     
     @objc func addTappedTSHIRT() {
-        lblPromo.text = "BUY +3 AND PAY 19€ PER UNIT "
+        for item in products[0].products {
+            if item.code == "TSHIRT" {
+                self.productName = item.name
+                self.productPrice = ["\(item.price)" + "0€", "\(item.price)" + "0€"]
+            }
+        }
+        lblPromo.text = "BUY  +3 AND PAY 19€ PER UNIT "
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Tshirt")!, UIImage(named: "TshirtWhite")!]
-        productName = "T-SHIRT"
-        productPrice = ["20,00€","20,00€"]
         collectionView.reloadData()
         
     }
     
     @objc func addTappedMUG() {
+        for item in products[0].products {
+            if item.code == "MUG" {
+                self.productName = item.name
+                self.productPrice = ["\(item.price)" + "0€"]
+            }
+        }
         lblPromo.text = "NICE MUG COFEE"
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Mug")!]
-        productName = "MUG"
-        productPrice = ["7,50€"]
         collectionView.reloadData()
         
     }
     
     @objc func addTappedVOUCHER() {
+        for item in products[0].products {
+            if item.code == "VOUCHER" {
+                self.productName = item.name
+                self.productPrice = ["\(item.price)" + "0€", "\(item.price + 5)" + "0€"]
+            }
+        }
         lblPromo.text = "BUY 1 & GET 1 FREE"
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Voucher5")!,UIImage(named: "Voucher10")!]
-        productName = "VOUCHER"
-        productPrice = ["5,00€","10,00€"]
         collectionView.reloadData()
         
     }
