@@ -77,24 +77,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="310" height="472"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGm-rq-x3x">
-                                                    <rect key="frame" x="139" y="406" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGm-rq-x3x">
+                                                    <rect key="frame" x="130.5" y="404" width="49.5" height="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="bBR-QC-In3">
-                                                    <rect key="frame" x="-18" y="74" width="356" height="325"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tshirt" translatesAutoresizingMaskIntoConstraints="NO" id="bBR-QC-In3">
+                                                    <rect key="frame" x="-23" y="39" width="356" height="325"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="325" id="vMz-jW-h3y"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2Y-2E-7Cd">
+                                                    <rect key="frame" x="132" y="375" width="46" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zGm-rq-x3x" firstAttribute="top" secondItem="W2Y-2E-7Cd" secondAttribute="bottom" constant="6" id="4d3-no-2hg"/>
+                                            <constraint firstItem="zGm-rq-x3x" firstAttribute="centerX" secondItem="f17-sW-ze7" secondAttribute="centerX" id="9cm-2H-Tlt"/>
+                                            <constraint firstItem="bBR-QC-In3" firstAttribute="leading" secondItem="f17-sW-ze7" secondAttribute="leadingMargin" constant="-31" id="FNa-Cm-E6T"/>
+                                            <constraint firstItem="bBR-QC-In3" firstAttribute="centerX" secondItem="zGm-rq-x3x" secondAttribute="centerX" id="KpU-JS-0ZI"/>
+                                            <constraint firstItem="bBR-QC-In3" firstAttribute="top" secondItem="f17-sW-ze7" secondAttribute="top" constant="39" id="OOg-Ck-IoZ"/>
+                                            <constraint firstItem="zGm-rq-x3x" firstAttribute="top" secondItem="bBR-QC-In3" secondAttribute="bottom" constant="40" id="R4H-Mb-Lbh"/>
+                                            <constraint firstItem="W2Y-2E-7Cd" firstAttribute="centerX" secondItem="f17-sW-ze7" secondAttribute="centerX" id="iiV-wb-mWx"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="zGm-rq-x3x" secondAttribute="bottom" constant="40" id="wrN-nr-YLr"/>
+                                        </constraints>
                                         <size key="customSize" width="310" height="472"/>
                                         <connections>
                                             <outlet property="imgProduct" destination="bBR-QC-In3" id="6E1-3a-67b"/>
+                                            <outlet property="lblDescription" destination="W2Y-2E-7Cd" id="YBL-Jz-epN"/>
+                                            <outlet property="lblSale" destination="zGm-rq-x3x" id="G7h-wy-OCJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -103,10 +122,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="AYr-UH-kH7"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJb-54-lzE">
-                                <rect key="frame" x="186" y="159" width="55" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJb-54-lzE">
+                                <rect key="frame" x="184" y="159" width="46" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -121,6 +139,9 @@
                             <constraint firstItem="VmP-bt-82D" firstAttribute="leading" secondItem="eVR-9b-6gq" secondAttribute="trailing" constant="15" id="VYY-3v-8KH"/>
                             <constraint firstItem="VmP-bt-82D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ya4-0E-deg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EPP-Te-ims" secondAttribute="trailing" constant="40" id="dLn-OM-vJj"/>
+                            <constraint firstItem="rJb-54-lzE" firstAttribute="top" secondItem="VmP-bt-82D" secondAttribute="bottom" constant="26" id="dnH-n1-SUz"/>
+                            <constraint firstItem="rJb-54-lzE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iS5-Yx-I6m"/>
+                            <constraint firstItem="2Bv-bN-aB9" firstAttribute="top" secondItem="rJb-54-lzE" secondAttribute="bottom" constant="26" id="jig-19-oed"/>
                             <constraint firstItem="hkl-Fk-atT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="qS7-Xw-wHq"/>
                             <constraint firstItem="2Bv-bN-aB9" firstAttribute="top" secondItem="eVR-9b-6gq" secondAttribute="bottom" constant="80" id="qZF-nP-cxl"/>
                             <constraint firstAttribute="trailing" secondItem="2Bv-bN-aB9" secondAttribute="trailing" id="ujo-6D-mkW"/>
@@ -140,6 +161,7 @@
                         <outlet property="btn3" destination="hkl-Fk-atT" id="224-bA-U2f"/>
                         <outlet property="btnAdd" destination="EPP-Te-ims" id="rGL-60-UZ3"/>
                         <outlet property="collectionView" destination="2Bv-bN-aB9" id="yfZ-6m-Cck"/>
+                        <outlet property="lblPromo" destination="rJb-54-lzE" id="qn6-TO-a2x"/>
                         <segue destination="cJN-yM-Mdy" kind="show" id="nrk-mX-qyb"/>
                     </connections>
                 </viewController>

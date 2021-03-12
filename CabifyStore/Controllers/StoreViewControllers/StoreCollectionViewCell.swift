@@ -9,7 +9,9 @@ import UIKit
 
 class StoreCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var lblTitle: UILabel!
+    
     @IBOutlet weak var imgProduct: UIImageView!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblSale: UILabel!
     
 }

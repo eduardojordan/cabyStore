@@ -12,7 +12,7 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayTshirt.count
+        return arrayImages.count
         
     }
     
@@ -20,8 +20,9 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! StoreCollectionViewCell
         
-//        cell.lblTitle.text = "PROMO 2 x 1"
-        cell.imgProduct.image = arrayTshirt[indexPath.row]
+        cell.imgProduct.image = self.arrayImages[indexPath.row]
+        cell.lblDescription.text = self.productName
+        cell.lblSale.text = self.productPrice[indexPath.row]
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
         

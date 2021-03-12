@@ -15,13 +15,17 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var lblPromo: UILabel!
     
     
-    let arrayTshirt = [UIImage(named: "Tshirt"), UIImage(named: "Tshirt")]
+    var arrayImages = [UIImage]()
+    var productName = String()
+    var productPrice = [String]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +33,7 @@ class StoreViewController: UIViewController {
         setupRightNavImage()
         setupNavigationBar()
         setupButtons()
+        addTappedTSHIRT()
         
     }
     
@@ -80,7 +85,7 @@ class StoreViewController: UIViewController {
         btnAdd.setTitle("ADD", for: .normal)
         
         btn1.addTarget(self, action: #selector(addTappedTSHIRT), for: .touchUpInside)
-        btn2.addTarget(self, action: #selector(addTappedMUCK), for: .touchUpInside)
+        btn2.addTarget(self, action: #selector(addTappedMUG), for: .touchUpInside)
         btn3.addTarget(self, action: #selector(addTappedVOUCHER), for: .touchUpInside)
         btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
@@ -91,28 +96,47 @@ class StoreViewController: UIViewController {
     
     @objc func addTapped() {
         print("PRESS")
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//        self.present(secondViewController, animated: true, completion: nil)
+        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //        let secondViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        //        self.present(secondViewController, animated: true, completion: nil)
         
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-
+        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         self.present(nextViewController, animated:true, completion:nil)
         
-
+        
     }
     
     @objc func addTappedTSHIRT() {
-        print("PRESS")
+        lblPromo.text = "BUY +3 AND PAY 19€ PER UNIT "
+        arrayImages.removeAll()
+        arrayImages = [UIImage(named: "Tshirt")!, UIImage(named: "TshirtWhite")!]
+        productName = "T-SHIRT"
+        productPrice = ["20,00€","20,00€"]
+        collectionView.reloadData()
+        
     }
     
-    @objc func addTappedMUCK() {
-        print("PRESS")
+    @objc func addTappedMUG() {
+        lblPromo.text = "NICE MUG COFEE"
+        arrayImages.removeAll()
+        arrayImages = [UIImage(named: "Mug")!]
+        productName = "MUG"
+        productPrice = ["7,50€"]
+        collectionView.reloadData()
+        
     }
     
     @objc func addTappedVOUCHER() {
-        print("PRESS")
+        lblPromo.text = "BUY 1 & GET 1 FREE"
+        arrayImages.removeAll()
+        arrayImages = [UIImage(named: "Voucher5")!,UIImage(named: "Voucher10")!]
+        productName = "VOUCHER"
+        productPrice = ["5,00€","10,00€"]
+        collectionView.reloadData()
+        
     }
 }
+
