@@ -67,7 +67,15 @@ class StoreViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationItem.rightBarButtonItem = rightBarButton
         
-        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addTapped))
+       // MARK: RED BADGE
+        let redPoint = UIImageView(frame: CGRect(x: 25, y: -3, width: 13, height: 13))
+        redPoint.image = UIImage(named: "redPoint")
+        redPoint.contentMode = UIView.ContentMode.scaleAspectFit
+        imageview.addSubview(redPoint)
+        
+        
+        
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showShoppingCar))
         gesture.numberOfTapsRequired = 1
         containView.isUserInteractionEnabled = true
         containView.addGestureRecognizer(gesture)
@@ -88,7 +96,7 @@ class StoreViewController: UIViewController {
         btn3.layer.cornerRadius = 10
         btnAdd.layer.cornerRadius = 20
         
-        btn1.setTitle("T_SHIRTS", for: .normal)
+        btn1.setTitle("T-SHIRTS", for: .normal)
         btn2.setTitle("MUGS", for: .normal)
         btn3.setTitle("VOUCHERS", for: .normal)
         btnAdd.setTitle("ADD", for: .normal)
@@ -96,22 +104,15 @@ class StoreViewController: UIViewController {
         btn1.addTarget(self, action: #selector(addTappedTSHIRT), for: .touchUpInside)
         btn2.addTarget(self, action: #selector(addTappedMUG), for: .touchUpInside)
         btn3.addTarget(self, action: #selector(addTappedVOUCHER), for: .touchUpInside)
-        btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+//        btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
     
-    @objc func addTapped() {
-        print("PRESS")
-        //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let secondViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        //        self.present(secondViewController, animated: true, completion: nil)
-        
-        
+    @objc func showShoppingCar() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        self.present(nextViewController, animated:true, completion:nil)
-        
-        
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.navigationController!.pushViewController(nextViewController, animated: true)
+                
     }
     
     @objc func addTappedTSHIRT() {

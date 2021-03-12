@@ -21,9 +21,9 @@ class DetailViewController: UIViewController {
     func addNavBarImage() {
         let image = UIImage(named: "Logo")
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 170, height: 30)
+        imageView.frame = CGRect(x: 0, y: 0, width: 170, height: 50)
         imageView.contentMode = .scaleAspectFit
-        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 170, height: 40))
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: 170, height: 50))
         titleView.addSubview(imageView)
         titleView.backgroundColor = .clear
         self.navigationItem.titleView = titleView

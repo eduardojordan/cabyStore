@@ -11,6 +11,7 @@
 		1809B0D825FABF3800D26294 /* ExtStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809B0D725FABF3800D26294 /* ExtStoreViewController.swift */; };
 		1809B10825FBF1A700D26294 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809B10725FBF1A700D26294 /* Products.swift */; };
 		1809B10B25FBF26100D26294 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809B10A25FBF26100D26294 /* Request.swift */; };
+		1809B14825FC1ABE00D26294 /* CabifyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1809B14625FC1ABE00D26294 /* CabifyStore.xcdatamodeld */; };
 		181ED19225FA197300B7E8D9 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19125FA197300B7E8D9 /* StoreViewController.swift */; };
 		181ED19525FA197E00B7E8D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19425FA197E00B7E8D9 /* DetailViewController.swift */; };
 		181ED19825FA199000B7E8D9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19725FA199000B7E8D9 /* PayViewController.swift */; };
@@ -30,6 +31,7 @@
 		1809B0D725FABF3800D26294 /* ExtStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtStoreViewController.swift; sourceTree = "<group>"; };
 		1809B10725FBF1A700D26294 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		1809B10A25FBF26100D26294 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		1809B14725FC1ABE00D26294 /* CabifyStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CabifyStore.xcdatamodel; sourceTree = "<group>"; };
 		181ED19125FA197300B7E8D9 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		181ED19425FA197E00B7E8D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		181ED19725FA199000B7E8D9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 				1809B10A25FBF26100D26294 /* Request.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		1809B11925FC197C00D26294 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1809B14625FC1ABE00D26294 /* CabifyStore.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		181ED19B25FA19EA00B7E8D9 /* StoreViewControllers */ = {
@@ -130,6 +140,7 @@
 				18B5CD3B25F959BE007F769E /* Info.plist */,
 				18B5CD4225F959DD007F769E /* Controllers */,
 				18B5CD4325F959ED007F769E /* Models */,
+				1809B11925FC197C00D26294 /* CoreData */,
 				1809B11425FC16E600D26294 /* Request */,
 				18B5CD4425F959FC007F769E /* Extensions */,
 				18B5CD4525F95A07007F769E /* Utils */,
@@ -336,6 +347,7 @@
 				1809B10B25FBF26100D26294 /* Request.swift in Sources */,
 				1809B0D525FABDBF00D26294 /* StoreCollectionViewCell.swift in Sources */,
 				18B5CD2E25F959BC007F769E /* AppDelegate.swift in Sources */,
+				1809B14825FC1ABE00D26294 /* CabifyStore.xcdatamodeld in Sources */,
 				1809B0D825FABF3800D26294 /* ExtStoreViewController.swift in Sources */,
 				1809B10825FBF1A700D26294 /* Products.swift in Sources */,
 				18B5CD3025F959BC007F769E /* SceneDelegate.swift in Sources */,
@@ -543,6 +555,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1809B14625FC1ABE00D26294 /* CabifyStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1809B14725FC1ABE00D26294 /* CabifyStore.xcdatamodel */,
+			);
+			currentVersion = 1809B14725FC1ABE00D26294 /* CabifyStore.xcdatamodel */;
+			path = CabifyStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 18B5CD2225F959BC007F769E /* Project object */;
 }
