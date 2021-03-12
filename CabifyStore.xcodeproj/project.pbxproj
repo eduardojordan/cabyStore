@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1809B0D525FABDBF00D26294 /* StoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809B0D425FABDBF00D26294 /* StoreCollectionViewCell.swift */; };
+		1809B0D825FABF3800D26294 /* ExtStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809B0D725FABF3800D26294 /* ExtStoreViewController.swift */; };
 		181ED19225FA197300B7E8D9 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19125FA197300B7E8D9 /* StoreViewController.swift */; };
 		181ED19525FA197E00B7E8D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19425FA197E00B7E8D9 /* DetailViewController.swift */; };
 		181ED19825FA199000B7E8D9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19725FA199000B7E8D9 /* PayViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1809B0D425FABDBF00D26294 /* StoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		1809B0D725FABF3800D26294 /* ExtStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtStoreViewController.swift; sourceTree = "<group>"; };
 		181ED19125FA197300B7E8D9 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		181ED19425FA197E00B7E8D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		181ED19725FA199000B7E8D9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 			isa = PBXGroup;
 			children = (
 				181ED19125FA197300B7E8D9 /* StoreViewController.swift */,
+				1809B0D725FABF3800D26294 /* ExtStoreViewController.swift */,
+				1809B0D425FABDBF00D26294 /* StoreCollectionViewCell.swift */,
 			);
 			path = StoreViewControllers;
 			sourceTree = "<group>";
@@ -191,7 +197,6 @@
 				6D20C5AF10D4BD9EAA1CA124 /* Pods-CabifyStore.debug.xcconfig */,
 				BF5570303E579A86921BD663 /* Pods-CabifyStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -314,7 +319,9 @@
 				181ED19225FA197300B7E8D9 /* StoreViewController.swift in Sources */,
 				181ED19825FA199000B7E8D9 /* PayViewController.swift in Sources */,
 				18B5CD4E25F95ADE007F769E /* Localisator.swift in Sources */,
+				1809B0D525FABDBF00D26294 /* StoreCollectionViewCell.swift in Sources */,
 				18B5CD2E25F959BC007F769E /* AppDelegate.swift in Sources */,
+				1809B0D825FABF3800D26294 /* ExtStoreViewController.swift in Sources */,
 				18B5CD3025F959BC007F769E /* SceneDelegate.swift in Sources */,
 				181ED19525FA197E00B7E8D9 /* DetailViewController.swift in Sources */,
 			);

@@ -14,11 +14,14 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
     @IBOutlet weak var btnAdd: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    let arrayTshirt = [UIImage(named: "Tshirt"), UIImage(named: "Tshirt")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,7 +29,6 @@ class StoreViewController: UIViewController {
         setupRightNavImage()
         setupNavigationBar()
         setupButtons()
-        
         
     }
     
@@ -72,7 +74,7 @@ class StoreViewController: UIViewController {
         btn3.layer.cornerRadius = 10
         btnAdd.layer.cornerRadius = 20
         
-        btn1.setTitle("T_SHGIRTS", for: .normal)
+        btn1.setTitle("T_SHIRTS", for: .normal)
         btn2.setTitle("MUGS", for: .normal)
         btn3.setTitle("VOUCHERS", for: .normal)
         btnAdd.setTitle("ADD", for: .normal)
@@ -83,8 +85,23 @@ class StoreViewController: UIViewController {
         btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     }
     
+    func setupCollection() {
+        
+    }
+    
     @objc func addTapped() {
         print("PRESS")
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let secondViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        self.present(secondViewController, animated: true, completion: nil)
+        
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.present(nextViewController, animated:true, completion:nil)
+        
+
     }
     
     @objc func addTappedTSHIRT() {

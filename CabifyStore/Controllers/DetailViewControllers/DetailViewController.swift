@@ -30,30 +30,12 @@ class DetailViewController: UIViewController {
         
     }
     
-//    func setupRightNavImage() {
-//        let containView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-//        imageview.image = UIImage(named: "ShopCarWhite")
-//        imageview.contentMode = UIView.ContentMode.scaleAspectFit
-//        containView.addSubview(imageview)
-//        let rightBarButton = UIBarButtonItem(customView: containView)
-//        self.navigationItem.rightBarButtonItem = rightBarButton
-//
-//        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(addTapped))
-//        gesture.numberOfTapsRequired = 1
-//        containView.isUserInteractionEnabled = true
-//        containView.addGestureRecognizer(gesture)
-//
-//
-//    }
-    
     func setupNavigationBar() {
         self.navigationController!.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
     }
-    
     
     func  setupButton() {
         btnPay.layer.cornerRadius = 20
