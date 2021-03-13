@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  CabifyStore
+
+  Created by Eduardo Jordan on 13/3/21.
+  
+*/
+
+
+"text_tshirt" = "SUDADERAS";
+"text_mugs" = "TAZAS";
+"text_voucher" = "VALES";
+"text_add" ="AGREGAR";
+"text_pay" ="PAGAR";
+
+"text_promo_tshirt" = "COMPRE +3 Y PAGE 19€ POR UNIDAD";
+"text_promo_mug" = "BONITA TAZA DE CAFE";
+"text_promo_voucher" = "COMPRE 1 y LLEVE 1 GRATIS";
+
+

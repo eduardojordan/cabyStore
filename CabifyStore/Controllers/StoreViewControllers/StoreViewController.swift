@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class StoreViewController: UIViewController {
     
@@ -20,6 +21,9 @@ class StoreViewController: UIViewController {
     var productName = String()
     var productPrice = [String]()
     var products = [Products]()
+    var carIsEmpty = true
+    var dataPrice = String()
+    var dataName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,13 +71,14 @@ class StoreViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationItem.rightBarButtonItem = rightBarButton
         
-       // MARK: RED BADGE
-        let redPoint = UIImageView(frame: CGRect(x: 25, y: -3, width: 13, height: 13))
-        redPoint.image = UIImage(named: "redPoint")
-        redPoint.contentMode = UIView.ContentMode.scaleAspectFit
-        imageview.addSubview(redPoint)
-        
-        
+       // MARK: RED BADGE********
+        if carIsEmpty == false {
+            let redPoint = UIImageView(frame: CGRect(x: 25, y: -3, width: 13, height: 13))
+            redPoint.image = UIImage(named: "redPoint")
+            redPoint.contentMode = UIView.ContentMode.scaleAspectFit
+            imageview.addSubview(redPoint)
+        }
+    
         
         let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showShoppingCar))
         gesture.numberOfTapsRequired = 1
@@ -96,15 +101,15 @@ class StoreViewController: UIViewController {
         btn3.layer.cornerRadius = 10
         btnAdd.layer.cornerRadius = 20
         
-        btn1.setTitle("T-SHIRTS", for: .normal)
-        btn2.setTitle("MUGS", for: .normal)
-        btn3.setTitle("VOUCHERS", for: .normal)
-        btnAdd.setTitle("ADD", for: .normal)
+        btn1.setTitle(localizedString("text_tshirt"), for: .normal)
+        btn2.setTitle(localizedString("text_mugs"), for: .normal)
+        btn3.setTitle(localizedString("text_voucher"), for: .normal)
+        btnAdd.setTitle(localizedString("text_add"), for: .normal)
         
         btn1.addTarget(self, action: #selector(addTappedTSHIRT), for: .touchUpInside)
         btn2.addTarget(self, action: #selector(addTappedMUG), for: .touchUpInside)
         btn3.addTarget(self, action: #selector(addTappedVOUCHER), for: .touchUpInside)
-//        btnAdd.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+        btnAdd.addTarget(self, action: #selector(addProduct), for: .touchUpInside)
     }
     
     @objc func showShoppingCar() {
@@ -122,7 +127,7 @@ class StoreViewController: UIViewController {
                 self.productPrice = ["\(item.price)" + "0€", "\(item.price)" + "0€"]
             }
         }
-        lblPromo.text = "BUY  +3 AND PAY 19€ PER UNIT "
+        lblPromo.text = localizedString("text_promo_tshirt")
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Tshirt")!, UIImage(named: "TshirtWhite")!]
         collectionView.reloadData()
@@ -136,7 +141,7 @@ class StoreViewController: UIViewController {
                 self.productPrice = ["\(item.price)" + "0€"]
             }
         }
-        lblPromo.text = "NICE MUG COFEE"
+        lblPromo.text = localizedString("text_promo_mug")
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Mug")!]
         collectionView.reloadData()
@@ -150,11 +155,43 @@ class StoreViewController: UIViewController {
                 self.productPrice = ["\(item.price)" + "0€", "\(item.price + 5)" + "0€"]
             }
         }
-        lblPromo.text = "BUY 1 & GET 1 FREE"
+        lblPromo.text = localizedString("text_promo_voucher")
         arrayImages.removeAll()
         arrayImages = [UIImage(named: "Voucher5")!,UIImage(named: "Voucher10")!]
         collectionView.reloadData()
         
     }
+    
+    
+    @objc func addProduct() {
+        if let collectionView = self.collectionView,
+           let indexPath = collectionView.indexPathsForSelectedItems?.first,
+           let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell,
+           let dataPrice = cell.lblSale.text, let dataName = cell.lblDescription.text {
+            self.dataPrice = "\(dataPrice)"
+            self.dataName = "\(dataName)"
+        }
+        saveData()
+        
+    }
+    
+    func saveData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let manageContent = appDelegate.persistentContainer.viewContext
+        let userEntity = NSEntityDescription.entity(forEntityName: "EntityProducts", in: manageContent)!
+        let users = NSManagedObject(entity: userEntity, insertInto: manageContent)
+      
+        users.setValue(self.dataPrice, forKey: "name")
+        users.setValue( self.dataPrice, forKey: "price")
+        do{
+            try manageContent.save()
+            print("save success!!")
+        }catch let error as NSError {
+            print("could not save . \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    
 }
 

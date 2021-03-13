@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  CabifyStore
+
+  Created by Eduardo Jordan on 13/3/21.
+  
+*/
+
+
+"text_tshirt" = "T-SHIRTS";
+"text_mugs" = "MUGS";
+"text_voucher" = "VOUCHERS";
+"text_add" ="ADD";
+"text_pay" ="PAY";
+
+"text_promo_tshirt" = "BUY  +3 AND PAY 19€ PER UNIT";
+"text_promo_mug" = "NICE MUG COFEE";
+"text_promo_voucher" = "BUY 1 & GET 1 FREE";

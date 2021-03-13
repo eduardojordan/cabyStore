@@ -46,4 +46,7 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return 20
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+    }
 }
