@@ -1,3 +1,5 @@
+
+
 # cabyStore
 Its a practice for app ecomerce
 
@@ -16,17 +18,17 @@ In the development of functions and code, it is about working under the S.O.L.I.
 
 For the whole process, the commits were made using the "Sourcetree" utility available for OS X
 
-#Deployment
+# Deployment
 Swift 5 Xcode 12.2 OS X 14.2  tested in Iiphone 12
 
 
-#Frameworks used
+# Frameworks used
 	•	UIkit Provides the required infrastructure for iOS
 	•	Coredata Used for data persistence on mobile
 
 
-#Languaje Localization
+# Languaje Localization
 Yes
 
-#Call API REST
+# Call API REST
 Yes
