@@ -1,4 +1,5 @@
-![alt text](http://url/to/cabifyCaptura.png)
+<img width="646" alt="cabifyCaptura" src="https://user-images.githubusercontent.com/6540018/111161765-c6670f00-859b-11eb-96dc-fd5c1adc3f34.png">
+
 
 # cabyStore
 Its a practice for app ecommerce
