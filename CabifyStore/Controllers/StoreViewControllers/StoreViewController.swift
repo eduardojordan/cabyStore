@@ -27,17 +27,19 @@ class StoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        entityIsEmpty()
+        setupRightNavImage()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        entityIsEmpty()
         getProductInfo()
         addNavBarImage()
         setupRightNavImage()
         setupNavigationBar()
         setupButtons()
-
+        
     }
     
     func getProductInfo() {
@@ -124,7 +126,7 @@ class StoreViewController: UIViewController {
         for item in products[0].products {
             if item.code == "TSHIRT" {
                 self.productName = item.name
-                self.productPrice = ["\(item.price)" + "0€", "\(item.price)" + "0€"]
+                self.productPrice = ["\(item.price)" + "0", "\(item.price)" + "0"]
             }
         }
         lblPromo.text = localizedString("text_promo_tshirt")
@@ -138,7 +140,7 @@ class StoreViewController: UIViewController {
         for item in products[0].products {
             if item.code == "MUG" {
                 self.productName = item.name
-                self.productPrice = ["\(item.price)" + "0€"]
+                self.productPrice = ["\(item.price)" + "0"]
             }
         }
         lblPromo.text = localizedString("text_promo_mug")
@@ -152,7 +154,7 @@ class StoreViewController: UIViewController {
         for item in products[0].products {
             if item.code == "VOUCHER" {
                 self.productName = item.name
-                self.productPrice = ["\(item.price)" + "0€", "\(item.price + 5)" + "0€"]
+                self.productPrice = ["\(item.price)" + "0", "\(item.price + 5)" + "0"]
             }
         }
         lblPromo.text = localizedString("text_promo_voucher")
@@ -161,8 +163,7 @@ class StoreViewController: UIViewController {
         collectionView.reloadData()
         
     }
-    
-    
+        
     @objc func addProduct() {
         if let collectionView = self.collectionView,
            let indexPath = collectionView.indexPathsForSelectedItems?.first,
@@ -172,26 +173,42 @@ class StoreViewController: UIViewController {
             self.dataName = "\(dataName)"
         }
         saveData()
-        
+        self.carIsEmpty = false
+        print(self.carIsEmpty)
+        setupRightNavImage()
     }
     
     func saveData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let manageContent = appDelegate.persistentContainer.viewContext
-        let userEntity = NSEntityDescription.entity(forEntityName: "EntityProducts", in: manageContent)!
-        let users = NSManagedObject(entity: userEntity, insertInto: manageContent)
-      
-        users.setValue(self.dataPrice, forKey: "name")
-        users.setValue( self.dataPrice, forKey: "price")
-        do{
-            try manageContent.save()
-            print("save success!!")
-        }catch let error as NSError {
-            print("could not save . \(error), \(error.userInfo)")
-        }
-        
+        let context = appDelegate.persistentContainer.viewContext
+        let product = EntityProducts(context: context)
+        product.name = self.dataName
+        product.price = self.dataPrice
+        appDelegate.saveContext()
+
     }
     
+    func entityIsEmpty() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let request: NSFetchRequest<EntityProducts> = EntityProducts.fetchRequest()
+        do {
+            let products = try context.fetch(request)
+            self.carIsEmpty = true
+            products.forEach { article in
+                guard let name = article.name
+                else {
+                    fatalError()
+                }
+                print(name)
+                if article.name != nil {
+                    self.carIsEmpty = false
+                }
+            }
+        } catch  {
+            print(error)
+        }
+    }
     
 }
 
