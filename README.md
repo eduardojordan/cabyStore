@@ -1,7 +1,7 @@
-
+![alt text](http://url/to/cabifyCaptura.png)
 
 # cabyStore
-Its a practice for app ecomerce
+Its a practice for app ecommerce
 
 # Build
 Xcode 4.2 or later iOS 12 or later OS X 12.2
