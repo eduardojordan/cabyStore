@@ -10,7 +10,6 @@ import UIKit
 
 extension StoreViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrayImages.count
         
@@ -19,7 +18,6 @@ extension StoreViewController: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! StoreCollectionViewCell
-        
         cell.imgProduct.image = self.arrayImages[indexPath.row]
         cell.lblDescription.text = self.productName
         cell.lblSale.text = self.productPrice[indexPath.row]

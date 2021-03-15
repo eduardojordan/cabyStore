@@ -18,8 +18,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var lblTotalPrice: UILabel!
     
     var detailArrayData = [Products]()
-    var dicountPlus: Double = 0.0
-    var totalPlus: Double = 0.0
+    var dicountPlus: [Double] = [0.0]
+    var totalPlus: [Double] = [0.0]
     var tshirtDiscount: Double = 0.0
     var voucherDiscount: Double = 0.0
     var tshirttotal: Double = 0.0
@@ -36,8 +36,6 @@ class DetailViewController: UIViewController {
         setupButton()
         setupTableView()
         setupLabels()
-        setupLabels()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +57,7 @@ class DetailViewController: UIViewController {
     func setupTableView() {
         tableView.backgroundColor = .clear
     }
-
+    
     func setupLabels() {
         lblDiscount.text = localizedString("text_discount")
         lblTotal.text = localizedString("text_total")
@@ -109,7 +107,6 @@ class DetailViewController: UIViewController {
         return []
     }
     
-    
     func filterProducts() {
         self.tshirt = self.detailArrayData.filter{ $0.products[0].name == "Cabify T-Shirt"}
         self.mug = self.detailArrayData.filter{ $0.products[0].name == "Cabify Coffee Mug"}
@@ -117,44 +114,17 @@ class DetailViewController: UIViewController {
         
     }
     
-//    func saveData() {
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-//        let context = appDelegate.persistentContainer.viewContext
-//        let product = EntityProducts(context: context)
-//        product.name = self.dataName
-//        product.price = self.dataPrice
-//        appDelegate.saveContext()
-//
-//    }
-    
     @objc func tapMinus(_ sender: UIButton) {
-        //        MARK: REALIZAR OPERACION PARA ELIMINAR CANTIDAD DE PRODUCTOS
-//        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-//        let context = appDelegate.persistentContainer.viewContext
-//        let index = sender.tag
-//        let productos =  loadData()
-//        context.delete(productos[index] as NSManagedObject)
-//
-//        self.detailArrayData.removeAll()
-//        let _ : NSError! = nil
-//        do {
-//            try context.save()
-//            DispatchQueue.main.async {
-//                self.loadData()
-//                self.tableView.reloadData()
-//            }
-//        } catch {
-//            print("error : \(error)")
-//        }
-        
+        print("PRESS")
+        //        MARK: REALIZAR OPERACION PARA ELIMINAR UNO A UNO CANTIDAD DE PRODUCTOS
     }
     
-    @objc func tapPlus() {
-//        MARK: REALIZAR OPERACION PARA AUMENTAR CANTIDAD DE PRODUCTOS
+    @objc func tapPlus(_ sender: UIButton) {
+        print("PRESS")
+        //        MARK: REALIZAR OPERACION PARA AUMENTAR UNO A UNO CANTIDAD DE PRODUCTOS
     }
     
     @objc func tapDelete(_ sender: UIButton) {
-
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
@@ -162,26 +132,37 @@ class DetailViewController: UIViewController {
         let productos =  loadData()
         context.delete(productos[index] as NSManagedObject)
         self.detailArrayData.removeAll()
-//        self.arrayProducts.removeAll()
-//        self.filterProducts()
-//        print("CANT",self.detailArrayData.count)
+        self.dicountPlus.removeAll()
+        self.totalPlus.removeAll()
+        self.loadData()
+        self.filterProducts()
+        self.updateSalesAndDiscount()
+        self.tableView.reloadData()
         let _ : NSError! = nil
         do {
             try context.save()
-
-            DispatchQueue.main.async {
-                self.loadData()
-//                self.filterProducts()
-                self.filterProducts()
-                self.tableView.reloadData()
-//                print("CANT",self.detailArrayData.count)
-            }
         } catch {
             print("error : \(error)")
         }
         
     }
-//    MARK: TODO FIX BUG WHEN ELIMINATE 
+    
+    func updateSalesAndDiscount() {
+        self.tshirttotal  = 0.0
+        self.mugtotal =  0.0
+        self.vouchertotal = 0.0
+        self.tshirtDiscount = 0.0
+        self.voucherDiscount = 0.0
+        
+        DispatchQueue.main.async { [self] in
+            self.dicountPlus = [ self.tshirtDiscount + self.voucherDiscount]
+            self.totalPlus =  [self.tshirttotal + self.mugtotal + self.vouchertotal]
+            lblDiscountPrice.text = String(self.dicountPlus[0]) + " €"
+            lblTotalPrice.text = String(self.totalPlus[0]) + " €"
+        }
+    }
+    
+    //    MARK: TODO FIX BUG WHEN ADD AND ELIMINATE ALTERNATE ROW
 }
 
 

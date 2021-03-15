@@ -73,7 +73,7 @@ class StoreViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationItem.rightBarButtonItem = rightBarButton
         
-       // MARK: RED BADGE********
+       // MARK: RED BADGE
         if carIsEmpty == false {
             let redPoint = UIImageView(frame: CGRect(x: 25, y: -3, width: 13, height: 13))
             redPoint.image = UIImage(named: "redPoint")
@@ -81,7 +81,6 @@ class StoreViewController: UIViewController {
             imageview.addSubview(redPoint)
         }
     
-        
         let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showShoppingCar))
         gesture.numberOfTapsRequired = 1
         containView.isUserInteractionEnabled = true
@@ -154,17 +153,17 @@ class StoreViewController: UIViewController {
         for item in products[0].products {
             if item.code == "VOUCHER" {
                 self.productName = item.name
-                self.productPrice = ["\(item.price)" + "0", "\(item.price + 5)" + "0"]
+                self.productPrice = ["\(item.price)" + "0"]
             }
         }
         lblPromo.text = localizedString("text_promo_voucher")
         arrayImages.removeAll()
-        arrayImages = [UIImage(named: "Voucher5")!,UIImage(named: "Voucher10")!]
+        arrayImages = [UIImage(named: "Voucher5")!]
         collectionView.reloadData()
         
     }
         
-    @objc func addProduct() {
+    @objc func addProduct(_ sender:UIButton) {
         if let collectionView = self.collectionView,
            let indexPath = collectionView.indexPathsForSelectedItems?.first,
            let cell = collectionView.cellForItem(at: indexPath) as? StoreCollectionViewCell,
@@ -174,8 +173,12 @@ class StoreViewController: UIViewController {
         }
         saveData()
         self.carIsEmpty = false
-        print(self.carIsEmpty)
         setupRightNavImage()
+        
+        let pulse = PulseAnimation(numberOfPulse: 1, radius: 200, postion: sender.center)
+        pulse.animationDuration = 1.0
+        pulse.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.view.layer.insertSublayer(pulse, below: self.view.layer)
     }
     
     func saveData() {

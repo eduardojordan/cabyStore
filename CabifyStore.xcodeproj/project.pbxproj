@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		181ED19225FA197300B7E8D9 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19125FA197300B7E8D9 /* StoreViewController.swift */; };
 		181ED19525FA197E00B7E8D9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19425FA197E00B7E8D9 /* DetailViewController.swift */; };
 		181ED19825FA199000B7E8D9 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181ED19725FA199000B7E8D9 /* PayViewController.swift */; };
+		1896B15825FFC54600D05F09 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896B15725FFC54600D05F09 /* PulseAnimation.swift */; };
 		18A9229B25FCEB1A00BBD309 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18A9229D25FCEB1A00BBD309 /* Localizable.strings */; };
 		18A922A225FD0E8C00BBD309 /* ExtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A922A125FD0E8C00BBD309 /* ExtDetailViewController.swift */; };
 		18A922A925FD0FE100BBD309 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A922A825FD0FE100BBD309 /* DetailTableViewCell.swift */; };
@@ -26,7 +27,6 @@
 		18B5CD4B25F95AAD007F769E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B5CD4A25F95AAD007F769E /* Images.xcassets */; };
 		18B5CD4E25F95ADE007F769E /* Localisator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CD4D25F95ADE007F769E /* Localisator.swift */; };
 		18B5CD5125F95B2B007F769E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5CD5025F95B2B007F769E /* Colors.swift */; };
-		746498326BCEF665AC6E8A6B /* Pods_CabifyStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBADCA9ECD069AF64FC42451 /* Pods_CabifyStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +38,7 @@
 		181ED19125FA197300B7E8D9 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		181ED19425FA197E00B7E8D9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		181ED19725FA199000B7E8D9 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		1896B15725FFC54600D05F09 /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
 		18A9229525FCEAAD00BBD309 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		18A9229625FCEAAD00BBD309 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		18A9229C25FCEB1A00BBD309 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -54,9 +55,6 @@
 		18B5CD4A25F95AAD007F769E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18B5CD4D25F95ADE007F769E /* Localisator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localisator.swift; sourceTree = "<group>"; };
 		18B5CD5025F95B2B007F769E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		6D20C5AF10D4BD9EAA1CA124 /* Pods-CabifyStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabifyStore.debug.xcconfig"; path = "Target Support Files/Pods-CabifyStore/Pods-CabifyStore.debug.xcconfig"; sourceTree = "<group>"; };
-		BF5570303E579A86921BD663 /* Pods-CabifyStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabifyStore.release.xcconfig"; path = "Target Support Files/Pods-CabifyStore/Pods-CabifyStore.release.xcconfig"; sourceTree = "<group>"; };
-		FBADCA9ECD069AF64FC42451 /* Pods_CabifyStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CabifyStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,21 +62,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746498326BCEF665AC6E8A6B /* Pods_CabifyStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0EB08F9F415FBAF050390A81 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FBADCA9ECD069AF64FC42451 /* Pods_CabifyStore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		1809B11425FC16E600D26294 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +118,6 @@
 				18B5CD2C25F959BC007F769E /* CabifyStore */,
 				18B5CD2B25F959BC007F769E /* Products */,
 				E847FB66EFBF89FC98441CED /* Pods */,
-				0EB08F9F415FBAF050390A81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +176,7 @@
 		18B5CD4525F95A07007F769E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1896B15725FFC54600D05F09 /* PulseAnimation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -231,8 +220,6 @@
 		E847FB66EFBF89FC98441CED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6D20C5AF10D4BD9EAA1CA124 /* Pods-CabifyStore.debug.xcconfig */,
-				BF5570303E579A86921BD663 /* Pods-CabifyStore.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -244,11 +231,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18B5CD3E25F959BE007F769E /* Build configuration list for PBXNativeTarget "CabifyStore" */;
 			buildPhases = (
-				D0ED8A5171539CFB8FBBAF5D /* [CP] Check Pods Manifest.lock */,
 				18B5CD2625F959BC007F769E /* Sources */,
 				18B5CD2725F959BC007F769E /* Frameworks */,
 				18B5CD2825F959BC007F769E /* Resources */,
-				42EDF3544E873F1D935A0895 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,48 +292,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		42EDF3544E873F1D935A0895 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CabifyStore/Pods-CabifyStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CabifyStore/Pods-CabifyStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CabifyStore/Pods-CabifyStore-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0ED8A5171539CFB8FBBAF5D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CabifyStore-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		18B5CD2625F959BC007F769E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,6 +310,7 @@
 				1809B0D825FABF3800D26294 /* ExtStoreViewController.swift in Sources */,
 				1809B10825FBF1A700D26294 /* Products.swift in Sources */,
 				18B5CD3025F959BC007F769E /* SceneDelegate.swift in Sources */,
+				1896B15825FFC54600D05F09 /* PulseAnimation.swift in Sources */,
 				181ED19525FA197E00B7E8D9 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -512,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -524,7 +468,6 @@
 		};
 		18B5CD3F25F959BE007F769E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D20C5AF10D4BD9EAA1CA124 /* Pods-CabifyStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -544,7 +487,6 @@
 		};
 		18B5CD4025F959BE007F769E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF5570303E579A86921BD663 /* Pods-CabifyStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
