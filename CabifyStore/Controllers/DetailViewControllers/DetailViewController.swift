@@ -115,17 +115,6 @@ class DetailViewController: UIViewController {
     }
     
     @objc func tapMinus(_ sender: UIButton) {
-        print("PRESS")
-        //        MARK: REALIZAR OPERACION PARA ELIMINAR UNO A UNO CANTIDAD DE PRODUCTOS
-    }
-    
-    @objc func tapPlus(_ sender: UIButton) {
-        print("PRESS")
-        //        MARK: REALIZAR OPERACION PARA AUMENTAR UNO A UNO CANTIDAD DE PRODUCTOS
-    }
-    
-    @objc func tapDelete(_ sender: UIButton) {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
         let index = sender.tag
@@ -144,7 +133,38 @@ class DetailViewController: UIViewController {
         } catch {
             print("error : \(error)")
         }
+    }
+    
+    @objc func tapPlus(_ sender: UIButton) {
+        print("PRESS")
+        //        MARK: TODO REALIZAR OPERACION PARA AUMENTAR UNO A UNO CANTIDAD DE PRODUCTOS
         
+
+    }
+    
+    @objc func tapDelete(_ sender: UIButton) {
+        //        MARK: TODO FIX BUGS DELETE ALL ROW
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let index = sender.tag
+        var productos = loadData()
+        context.delete(productos[index] as NSManagedObject)
+        productos.removeAll()
+        self.detailArrayData.removeAll()
+        self.dicountPlus.removeAll()
+        self.totalPlus.removeAll()
+        self.loadData()
+        self.filterProducts()
+        self.updateSalesAndDiscount()
+        self.tableView.reloadData()
+        let _ : NSError! = nil
+        do {
+            try context.save()
+        } catch {
+            print("error : \(error)")
+        }
+
     }
     
     func updateSalesAndDiscount() {
@@ -164,7 +184,6 @@ class DetailViewController: UIViewController {
     
     //    MARK: TODO FIX BUG WHEN ADD AND ELIMINATE ALTERNATE ROW
 }
-
 
 
 

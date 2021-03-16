@@ -29,7 +29,7 @@ class StoreViewController: UIViewController {
         super.viewDidLoad()
         entityIsEmpty()
         setupRightNavImage()
-       
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +45,8 @@ class StoreViewController: UIViewController {
     func getProductInfo() {
         Request.shared.getRequest { [self] (result) in
             products.append(result)
-            print(products)
             DispatchQueue.main.async { [self] in
-              addTappedTSHIRT()
+                addTappedTSHIRT()
             }
         }
     }
@@ -73,14 +72,14 @@ class StoreViewController: UIViewController {
         let rightBarButton = UIBarButtonItem(customView: containView)
         self.navigationItem.rightBarButtonItem = rightBarButton
         
-       // MARK: RED BADGE
+        // MARK: RED BADGE
         if carIsEmpty == false {
             let redPoint = UIImageView(frame: CGRect(x: 25, y: -3, width: 13, height: 13))
             redPoint.image = UIImage(named: "redPoint")
             redPoint.contentMode = UIView.ContentMode.scaleAspectFit
             imageview.addSubview(redPoint)
         }
-    
+        
         let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showShoppingCar))
         gesture.numberOfTapsRequired = 1
         containView.isUserInteractionEnabled = true
@@ -118,7 +117,7 @@ class StoreViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         nextViewController.modalPresentationStyle = .fullScreen
         self.navigationController!.pushViewController(nextViewController, animated: true)
-                
+        
     }
     
     @objc func addTappedTSHIRT() {
@@ -162,7 +161,7 @@ class StoreViewController: UIViewController {
         collectionView.reloadData()
         
     }
-        
+    
     @objc func addProduct(_ sender:UIButton) {
         if let collectionView = self.collectionView,
            let indexPath = collectionView.indexPathsForSelectedItems?.first,
@@ -188,7 +187,7 @@ class StoreViewController: UIViewController {
         product.name = self.dataName
         product.price = self.dataPrice
         appDelegate.saveContext()
-
+        
     }
     
     func entityIsEmpty() {
@@ -201,6 +200,7 @@ class StoreViewController: UIViewController {
             products.forEach { article in
                 guard let name = article.name
                 else {
+                    print(Error.self)
                     fatalError()
                 }
                 print(name)

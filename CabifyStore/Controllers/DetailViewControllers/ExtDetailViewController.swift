@@ -57,7 +57,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.lblName.text =  "Cabify Voucher"//self.detailArrayData[indexPath.row].products[0].name //
             cell.lblQuantity.text = String(self.voucher.count * 2)
             cell.lblPrice.text = String( self.detailArrayData[indexPath.row].products[0].price)
-            self.voucherDiscount =  self.detailArrayData[indexPath.row].products[0].price
+            self.voucherDiscount =  Double( self.detailArrayData[indexPath.row].products[0].price)
             self.vouchertotal = Double( self.detailArrayData[indexPath.row].products[0].price)
             
         }
@@ -94,4 +94,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
 
+ 
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//      if editingStyle == .delete {
+//        print("Deleted")
+//
+//        self.detailArrayData.remove(at: indexPath.row)
+//        self.tableView.deleteRows(at: [indexPath], with: .fade)
+//      }
+//    }
+    
 }

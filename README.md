@@ -3,6 +3,7 @@
 
 # cabyStore
 Its a practice for app ecommerce
+You can add a product of each category and see its price, its discount or delete products
 
 # Build
 Xcode 4.2 or later iOS 12 or later OS X 12.2
